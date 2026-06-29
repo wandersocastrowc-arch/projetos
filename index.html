@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wanderson Castro — Hub de Projetos</title>
+<meta name="description" content="Hub central dos projetos de Wanderson Castro — economista, perito judicial e consultor. Observatórios econômicos, ferramentas financeiras, monitores de carreira e apps." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#070b14;--card:#111a2e;--card-hover:#16223b;
+    --line:rgba(255,255,255,.08);--line-2:rgba(255,255,255,.14);
+    --txt:#e8eefb;--muted:#93a1bd;--faint:#64748b;
+    --emerald:#34d399;--cyan:#22d3ee;--violet:#a78bfa;--amber:#fbbf24;--rose:#fb7185;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.brand{font-family:'Sora',sans-serif;letter-spacing:-.02em}
+
+  .glow{position:fixed;border-radius:50%;filter:blur(120px);opacity:.32;z-index:0;pointer-events:none}
+  .glow.a{width:520px;height:520px;background:#0e7490;top:-180px;left:-120px}
+  .glow.b{width:480px;height:480px;background:#15803d;bottom:-160px;right:-120px;opacity:.26}
+  .glow.c{width:380px;height:380px;background:#6d28d9;top:40%;left:55%;opacity:.16}
+
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
+  .brand{font-weight:700;font-size:1.15rem;display:flex;align-items:center;gap:10px}
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,var(--emerald),var(--cyan));box-shadow:0 0 16px var(--emerald)}
+  .brand small{font-family:'Inter';font-weight:500;color:var(--muted);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;margin-left:4px}
+  nav .links{display:flex;gap:26px;font-size:.92rem}
+  nav .links a{color:var(--muted);text-decoration:none;transition:color .2s}
+  nav .links a:hover{color:var(--txt)}
+  @media(max-width:680px){nav .links{display:none}}
+
+  header{padding:64px 0 40px;position:relative}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--emerald);
+    border:1px solid var(--line-2);padding:7px 14px;border-radius:999px;background:rgba(52,211,153,.06);margin-bottom:26px}
+  .eyebrow .ping{width:7px;height:7px;border-radius:50%;background:var(--emerald);animation:ping 2s infinite}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(52,211,153,.5)}70%{box-shadow:0 0 0 10px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+  header h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;line-height:1.05;margin-bottom:20px}
+  header h1 .grad{background:linear-gradient(120deg,var(--emerald),var(--cyan) 55%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  header p.lead{font-size:clamp(1.02rem,2.2vw,1.22rem);color:var(--muted);max-width:620px}
+  .roles{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .role{font-size:.84rem;color:var(--txt);background:var(--card);border:1px solid var(--line);padding:8px 14px;border-radius:10px}
+  .stats{display:flex;gap:34px;margin-top:40px;flex-wrap:wrap}
+  .stat .n{font-family:'Sora';font-size:1.9rem;font-weight:700;background:linear-gradient(120deg,var(--emerald),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .l{font-size:.78rem;color:var(--faint);text-transform:uppercase;letter-spacing:.1em}
+
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin:48px 0 30px;position:sticky;top:0;padding:16px 0;background:linear-gradient(var(--bg),var(--bg) 70%,transparent);z-index:5}
+  .chip{font-family:'Inter';font-size:.85rem;font-weight:500;color:var(--muted);background:var(--card);border:1px solid var(--line);padding:9px 16px;border-radius:999px;cursor:pointer;transition:all .2s}
+  .chip:hover{color:var(--txt);border-color:var(--line-2)}
+  .chip.active{color:#071018;background:linear-gradient(120deg,var(--emerald),var(--cyan));border-color:transparent;font-weight:600}
+
+  .section-title{display:flex;align-items:center;gap:12px;margin:46px 0 22px}
+  .section-title h2{font-size:1.32rem;font-weight:700}
+  .section-title .bar{height:1px;flex:1;background:var(--line)}
+  .section-title .count{font-size:.8rem;color:var(--faint);background:var(--card);border:1px solid var(--line);padding:3px 10px;border-radius:999px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+  .card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    text-decoration:none;color:inherit;display:flex;flex-direction:column;
+    transition:transform .25s cubic-bezier(.2,.7,.3,1),border-color .25s,box-shadow .25s;opacity:0;transform:translateY(18px)}
+  .card.in{opacity:1;transform:none}
+  .card:hover{transform:translateY(-6px);border-color:var(--accent,var(--line-2));box-shadow:0 18px 40px -22px var(--accent,#000)}
+
+  .cover{height:124px;background:var(--cov,linear-gradient(135deg,#1e293b,#0f172a));position:relative;
+    display:flex;align-items:flex-start;justify-content:flex-end;padding:14px;overflow:hidden}
+  .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 62%,rgba(17,26,46,.55));pointer-events:none}
+  .cover .badge{position:relative;z-index:2;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+    color:#fff;background:rgba(7,11,20,.42);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);
+    border:1px solid rgba(255,255,255,.18);padding:5px 11px;border-radius:999px}
+  .cover .art{position:absolute;left:16px;bottom:6px;height:98px;width:auto;z-index:1;
+    filter:drop-shadow(0 8px 16px rgba(0,0,0,.22));transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+  .card:hover .cover .art{transform:translateY(-3px) scale(1.03)}
+
+  .body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .card h3{font-size:1.12rem;font-weight:700;line-height:1.25}
+  .card p{font-size:.9rem;color:var(--muted);flex:1}
+  .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .tag{font-size:.7rem;color:var(--faint);background:rgba(255,255,255,.04);border:1px solid var(--line);padding:3px 9px;border-radius:7px}
+  .foot{display:flex;align-items:center;gap:8px;margin-top:4px;font-size:.85rem;font-weight:600;color:var(--accent,var(--emerald))}
+  .foot .arrow{transition:transform .2s}
+  .card:hover .foot .arrow{transform:translateX(4px)}
+
+  footer{margin-top:80px;border-top:1px solid var(--line);padding:46px 0 60px;color:var(--muted)}
+  footer .fgrid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+  footer h4{font-family:'Sora';color:var(--txt);font-size:1rem;margin-bottom:8px}
+  footer a{color:var(--cyan);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  .note{font-size:.78rem;color:var(--faint);margin-top:26px;max-width:620px}
+  .hidden{display:none!important}
+</style>
+</head>
+<body>
+<div class="glow a"></div><div class="glow b"></div><div class="glow c"></div>
+
+<div class="wrap">
+  <nav>
+    <div class="brand"><span class="dot"></span> Wanderson Castro <small>HUB</small></div>
+    <div class="links">
+      <a href="#observatorios">Observatórios</a>
+      <a href="#ferramentas">Ferramentas</a>
+      <a href="#monitores">Monitores</a>
+      <a href="#apps">Apps</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </nav>
+
+  <header>
+    <span class="eyebrow"><span class="ping"></span> Projetos reunidos num só lugar</span>
+    <h1>Economia, dados e ferramentas<br><span class="grad">que viram produto.</span></h1>
+    <p class="lead">Reúno aqui meus projetos públicos — de observatórios econômicos territoriais a calculadoras financeiras e apps. Tudo construído na prática, aberto e em evolução constante.</p>
+    <div class="roles">
+      <span class="role">Economista</span>
+      <span class="role">Perito Judicial</span>
+      <span class="role">Consultor</span>
+      <span class="role">Palestrante</span>
+      <span class="role">Delegado CORECON-SP · Jandira</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">9</div><div class="l">Projetos</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Observatórios</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">Monitores</div></div>
+      <div class="stat"><div class="n">100%</div><div class="l">Open / Web</div></div>
+    </div>
+  </header>
+
+  <div class="filters" id="filters">
+    <button class="chip active" data-f="all">Todos</button>
+    <button class="chip" data-f="obs">Observatórios</button>
+    <button class="chip" data-f="fin">Ferramentas financeiras</button>
+    <button class="chip" data-f="mon">Monitores</button>
+    <button class="chip" data-f="app">Apps & experimentos</button>
+  </div>
+
+  <!-- OBSERVATÓRIOS -->
+  <div class="section-title" id="observatorios"><h2>Observatórios & Inteligência Territorial</h2><span class="bar"></span><span class="count">2</span></div>
+  <div class="grid">
+    <a class="card" data-cat="obs" style="--accent:var(--cyan);--cov:radial-gradient(150px 95px at 82% 4%,rgba(34,211,238,.6),transparent 72%),radial-gradient(130px 120px at 4% 112%,rgba(167,139,250,.5),transparent 70%),linear-gradient(140deg,#0e7490,#3b1d6e)" href="https://wandersocastrowc-arch.github.io/observatorio-jandira/" target="_blank" rel="noopener">
+      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><circle cx="150" cy="20" r="10" fill="#ddd6fe"/><rect x="6" y="52" width="24" height="48" rx="2" fill="#a5f3fc"/><rect x="34" y="34" width="28" height="66" rx="2" fill="#ffffff"/><rect x="66" y="60" width="22" height="40" rx="2" fill="#67e8f9"/><rect x="92" y="46" width="28" height="54" rx="2" fill="#e0fcff"/><rect x="124" y="64" width="24" height="36" rx="2" fill="#22d3ee"/><g fill="#0e7490"><rect x="42" y="42" width="4" height="6"/><rect x="50" y="42" width="4" height="6"/><rect x="42" y="54" width="4" height="6"/><rect x="50" y="54" width="4" height="6"/><rect x="100" y="56" width="4" height="6"/><rect x="108" y="56" width="4" height="6"/></g></svg><span class="badge">Observatório</span></div>
+      <div class="body">
+        <h3>Observatório Econômico de Jandira</h3>
+        <p>HUB de inteligência territorial com indicadores socioeconômicos do município — emprego, CAGED, PIB e dados públicos atualizados.</p>
+        <div class="tags"><span class="tag">Dados públicos</span><span class="tag">Jandira-SP</span><span class="tag">Indicadores</span></div>
+        <div class="foot">Acessar <span class="arrow">→</span></div>
+      </div>
+    </a>
+    <a class="card" data-cat="obs" style="--accent:var(--cyan);--cov:radial-gradient(160px 95px at 18% 0%,rgba(52,211,153,.55),transparent 70%),radial-gradient(130px 120px at 96% 112%,rgba(34,211,238,.5),transparent 72%),linear-gradient(135deg,#0f766e,#164e63)" href="https://wandersocastrowc-arch.github.io/observatorio-caratinga/" target="_blank" rel="noopener">
+      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><circle cx="34" cy="24" r="9" fill="#fde68a"/><path d="M-2 100 L46 38 L82 84 L94 70 L120 100 Z" fill="#bbf7d0"/><path d="M72 100 L120 44 L168 100 Z" fill="#ffffff"/><path d="M110 57 L120 44 L130 57 L124 61 L120 54 L116 61 Z" fill="#a5f3fc"/></svg><span class="badge">Observatório</span></div>
+      <div class="body">
+        <h3>Observatório Econômico de Caratinga</h3>
+        <p>Inteligência territorial para Caratinga-MG: panorama econômico, dados municipais e indicadores de desenvolvimento local.</p>
+        <div class="tags"><span class="tag">Dados públicos</span><span class="tag">Caratinga-MG</span><span class="tag">Indicadores</span></div>
+        <div class="foot">Acessar <span class="arrow">→</span></div>
+      </div>
+    </a>
+  </div>
+
+  <!-- FERRAMENTAS FINANCEIRAS -->
+  <div class="section-title" id="ferramentas"><h2>Ferramentas Financeiras</h2><span class="bar"></span><span class="count">2</span></div>
+  <div class="grid">
+    <a class="card" data-cat="fin" style="--accent:var(--emerald);--cov:radial-gradient(150px 95px at 84% 6%,rgba(52,211,153,.6),transparent 72%),radial-gradient(130px 120px at 4% 110%,rgba(34,211,238,.4),transparent 70%),linear-gradient(140deg,#047857,#155e6e)" href="https://wandersocastrowc-arch.github.io/precificadora/" target="_blank" rel="noopener">
+      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(-16 70 56)"><rect x="34" y="30" width="66" height="66" rx="14" fill="#ffffff"/><circle cx="52" cy="48" r="7" fill="#047857"/></g><circle cx="130" cy="66" r="22" fill="#fde68a"/><text x="130" y="74" font-size="23" font-weight="800" fill="#047857" text-anchor="middle" font-family="'Sora',sans-serif">$</text></svg><span class="badge">FinLab</span></div>
+      <div class="body">
+        <h3>Precificadora · iFood &amp; Marketplaces</h3>
+        <p>Precificação por canal para delivery e marketplaces. Calcule custo, preço de venda e margem de contribuição com clareza.</p>
+        <div class="tags"><span class="tag">Margem</span><span class="tag">Delivery</span><span class="tag">Precificação</span></div>
+        <div class="foot">Acessar <span class="arrow">→</span></div>
+      </div>
+    </a>
+    <a class="card locked" data-cat="fin" style="--accent:var(--amber);--cov:radial-gradient(150px 95px at 80% 6%,rgba(251,191,36,.55),transparent 72%),radial-gradient(130px 120px at 6% 112%,rgba(251,113,133,.4),transparent 70%),linear-gradient(140deg,#b45309,#7c2d12)" href="https://esteira-pericia.wanderso-castro-wc.workers.dev/" target="_blank" rel="noopener">
+      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="58" width="16" height="42" rx="2" fill="#fff7ed"/><rect x="32" y="44" width="16" height="56" rx="2" fill="#fed7aa"/><rect x="54" y="30" width="16" height="70" rx="2" fill="#ffffff"/><circle cx="116" cy="46" r="26" fill="#fffbeb"/><circle cx="116" cy="46" r="26" fill="none" stroke="#fbbf24" stroke-width="7"/><rect x="132" y="62" width="30" height="10" rx="5" transform="rotate(45 138 66)" fill="#fde68a"/><rect x="150" y="14" width="18" height="14" rx="3" fill="#fff7ed"/><path d="M153 14v-3a6 6 0 0 1 12 0v3" stroke="#fff7ed" stroke-width="3.4" fill="none"/></svg><span class="badge">Painel · Restrito</span></div>
+      <div class="body">
+        <h3>Esteira de Perícia</h3>
+        <p>Painel privado de prospecção e acompanhamento de perícias econômico-financeiras. Acesso protegido por senha.</p>
+        <div class="tags"><span class="tag">Perícia</span><span class="tag">Cloudflare</span><span class="tag">Privado</span></div>
+        <div class="foot">Abrir painel <span class="arrow">→</span></div>
+      </div>
+    </a>
+  </div>
+
+  <!-- MONITORES -->
+  <div class="section-title" id="monitores"><h2>Monitores de Carreira & Academia</h2><span class="bar"></span><span class="count">3</span></div>
+  <div class="grid">
+    <a class="card" data-cat="mon" style="--accent:var(--violet);--cov:radial-gradient(150px 95px at 84% 6%,rgba(167,139,250,.6),transparent 72%),radial-gradient(130px 120px at 5% 110%,rgba(34,211,238,.3),transparent 70%),linear-gradient(140deg,#5b21b6,#1e3a8a)" href="https://wandersocastrowc-arch.github.io/concurso-economista-web/" target="_blank" rel="noopener">
+      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><rect x="26" y="12" width="70" height="84" rx="8" fill="#ffffff"/><rect x="40" y="28" width="44" height="6" rx="3" fill="#ddd6fe"/><rect x="40" y="42" width="44" height="6" rx="3" fill="#ede9fe"/><rect x="40" y="56" width="30" height="6" rx="3" fill="#ede9fe"/><path d="M120 70 l8 18 l8 -18 Z" fill="#7c3aed"/><circle cx="128" cy="52" r="22" fill="#a78bfa"/><circle cx="128" cy="52" r="22" fill="none" stroke="#c4b5fd" stroke-width="4"/><path d="M119 52 l6 7 l12 -14" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="badge">Monitor</span></div>
+      <div class="body">
+        <h3>Concursos para Economista</h3>
+        <p>Cargos privativos e que aceitam economista — Brasil todo e São Paulo. Atualizado toda semana.</p>
+        <div class="tags"><span class="tag">Concursos</span><span class="tag">Economia</span><span class="tag">Semanal</span></div>
+        <div class="foot">Acessar <span class="arrow">→</span></div>
+      </div>
+    </a>
+    <a class="card" data-cat="mon" style="--accent:var(--violet);--cov:radial-gradient(160px 95px at 18% 2%,rgba(196,181,253,.6),transparent 72%),radial-gradient(130px 120px at 96% 110%,rgba(99,102,241,.45),transparent 70%),linear-gradient(135deg,#6d28d9,#4338ca)" href="https://wandersocastrowc-arch.github.io/monitor-pos-web/" target="_blank" rel="noopener">
+      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><path d="M90 22 L18 50 L90 78 L162 50 Z" fill="#ede9fe"/><path d="M52 62 v22 c0 9 76 9 76 0 v-22" fill="#a78bfa"/><path d="M162 50 v28" stroke="#ddd6fe" stroke-width="4" fill="none"/><circle cx="162" cy="82" r="6" fill="#ddd6fe"/></svg><span class="badge">Monitor</span></div>
+      <div class="body">
+        <h3>Pós-Graduação Gratuita</h3>
+        <p>Mestrado, especialização, MBA e cursos longos gratuitos em economia, finanças, dados e gestão. Online ou em SP.</p>
+        <div class="tags"><span class="tag">Pós</span><span class="tag">Gratuito</span><span class="tag">Semanal</span></div>
+        <div class="foot">Acessar <span class="arrow">→</span></div>
+      </div>
+    </a>
+    <a class="card" data-cat="mon" style="--accent:var(--violet);--cov:radial-gradient(150px 95px at 82% 4%,rgba(167,139,250,.55),transparent 72%),radial-gradient(130px 120px at 6% 112%,rgba(99,102,241,.5),transparent 70%),linear-gradient(140deg,#7c3aed,#312e81)" href="https://wandersocastrowc-arch.github.io/monitor-congressos-jully/" target="_blank" rel="noopener">
+      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><path d="M90 24 C70 14 44 12 22 16 V80 C44 76 70 78 90 88 Z" fill="#ffffff"/><path d="M90 24 C110 14 136 12 158 16 V80 C136 76 110 78 90 88 Z" fill="#ede9fe"/><path d="M90 24 V88" stroke="#a78bfa" stroke-width="3"/><path d="M34 34 q14 0 24 4 M34 48 q14 0 24 4 M34 62 q12 0 20 3" stroke="#c4b5fd" stroke-width="3" fill="none"/><path d="M122 38 q14 -4 24 -4 M122 52 q14 -4 24 -4" stroke="#c4b5fd" stroke-width="3" fill="none"/></svg><span class="badge">Monitor</span></div>
+      <div class="body">
+        <h3>Congressos &amp; Publicações</h3>
+        <p>Monitor automático de congressos, chamadas de trabalhos, periódicos e dossiês — ciência da informação, comunicação e humanidades digitais.</p>
+        <div class="tags"><span class="tag">Acadêmico</span><span class="tag">Chamadas</span><span class="tag">Periódicos</span></div>
+        <div class="foot">Acessar <span class="arrow">→</span></div>
+      </div>
+    </a>
+  </div>
+
+  <!-- APPS -->
+  <div class="section-title" id="apps"><h2>Apps & Experimentos</h2><span class="bar"></span><span class="count">2</span></div>
+  <div class="grid">
+    <a class="card" data-cat="app" style="--accent:var(--rose);--cov:radial-gradient(150px 95px at 84% 6%,rgba(251,113,133,.6),transparent 72%),radial-gradient(130px 120px at 5% 110%,rgba(167,139,250,.5),transparent 70%),linear-gradient(140deg,#be185d,#6d28d9)" href="https://wandersocastrowc-arch.github.io/PalcoLivre/" target="_blank" rel="noopener">
+      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><rect x="78" y="12" width="30" height="50" rx="15" fill="#ffffff"/><path d="M66 50 a27 27 0 0 0 54 0" fill="none" stroke="#fda4af" stroke-width="7"/><rect x="90" y="76" width="6" height="18" rx="3" fill="#fda4af"/><rect x="76" y="92" width="34" height="6" rx="3" fill="#fda4af"/><circle cx="36" cy="40" r="7" fill="#fda4af"/><circle cx="20" cy="64" r="5" fill="#fb7185"/><rect x="128" y="32" width="36" height="5" rx="2" fill="#fecdd3"/><rect x="128" y="44" width="28" height="5" rx="2" fill="#fecdd3"/><rect x="128" y="56" width="22" height="5" rx="2" fill="#fecdd3"/></svg><span class="badge">App</span></div>
+      <div class="body">
+        <h3>PalcoLivre</h3>
+        <p>Repertório + teleprompter mãos-livres para músicos. A letra e a cifra rolam sozinhas — você controla levantando as sobrancelhas (webcam + IA).</p>
+        <div class="tags"><span class="tag">Teleprompter</span><span class="tag">MediaPipe</span><span class="tag">Música</span></div>
+        <div class="foot">Acessar <span class="arrow">→</span></div>
+      </div>
+    </a>
+    <a class="card" data-cat="app" style="--accent:var(--rose);--cov:radial-gradient(150px 95px at 82% 6%,rgba(251,113,133,.6),transparent 72%),radial-gradient(140px 120px at 6% 112%,rgba(251,191,36,.4),transparent 70%),linear-gradient(140deg,#b91c1c,#7c2d12)" href="https://wandersocastrowc-arch.github.io/posso-dirigir/" target="_blank" rel="noopener">
+      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><path d="M28 72 l9 -22 a9 9 0 0 1 8 -6 h44 a9 9 0 0 1 8 6 l9 22 Z" fill="#fb7185"/><rect x="22" y="72" width="92" height="22" rx="9" fill="#fda4af"/><rect x="48" y="52" width="22" height="16" rx="3" fill="#7f1d1d"/><rect x="74" y="52" width="22" height="16" rx="3" fill="#7f1d1d"/><circle cx="44" cy="94" r="9" fill="#7f1d1d"/><circle cx="100" cy="94" r="9" fill="#7f1d1d"/><path d="M134 24 h34 l-17 21 z" fill="#fde68a"/><rect x="149" y="45" width="4" height="22" fill="#fde68a"/><rect x="138" y="67" width="26" height="5" rx="2" fill="#fde68a"/><circle cx="151" cy="20" r="4" fill="#fecaca"/></svg><span class="badge">App</span></div>
+      <div class="body">
+        <h3>Posso Dirigir?</h3>
+        <p>Calculadora bem-humorada que estima quando dá pra dirigir depois de beber. Estimativa aproximada — na dúvida, não dirija.</p>
+        <div class="tags"><span class="tag">Widmark</span><span class="tag">Mobile-first</span><span class="tag">Saúde</span></div>
+        <div class="foot">Acessar <span class="arrow">→</span></div>
+      </div>
+    </a>
+  </div>
+
+  <footer id="contato">
+    <div class="fgrid">
+      <div style="max-width:340px">
+        <h4>Wanderson Castro</h4>
+        <p style="font-size:.9rem">Economista, perito judicial e consultor. Construindo ferramentas e observatórios que transformam dados em decisão.</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p style="font-size:.9rem"><a href="mailto:wanderso.castro.wc@gmail.com">wanderso.castro.wc@gmail.com</a></p>
+        <p style="font-size:.9rem"><a href="https://wandersocastrowc-arch.github.io/Portifolio/" target="_blank" rel="noopener">Portfólio &amp; currículo →</a></p>
+      </div>
+      <div>
+        <h4>Áreas</h4>
+        <p style="font-size:.9rem">Perícia econômico-financeira<br>Planejamento financeiro &amp; BPO<br>Inteligência territorial<br>Treinamentos corporativos</p>
+      </div>
+    </div>
+    <p class="note">Página-hub reunindo projetos públicos. Os endereços apontam hoje para o GitHub Pages e para o painel na Cloudflare; quando o domínio próprio estiver no ar, basta trocar os links por subdomínios (ex.: <em>jandira.seudominio.com.br</em>).</p>
+  </footer>
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e)=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.card').forEach((c,i)=>{ c.style.transitionDelay=(i%3*60)+'ms'; io.observe(c); });
+
+  const chips=document.querySelectorAll('.chip');
+  chips.forEach(ch=>ch.addEventListener('click',()=>{
+    chips.forEach(c=>c.classList.remove('active')); ch.classList.add('active');
+    const f=ch.dataset.f;
+    document.querySelectorAll('.card').forEach(card=>{
+      const show = f==='all' || card.dataset.cat===f;
+      card.classList.toggle('hidden',!show);
+    });
+    document.querySelectorAll('.grid').forEach(grid=>{
+      const anyVisible=[...grid.querySelectorAll('.card')].some(c=>!c.classList.contains('hidden'));
+      grid.classList.toggle('hidden',!anyVisible);
+      const title=grid.previousElementSibling;
+      if(title && title.classList.contains('section-title')) title.classList.toggle('hidden',!anyVisible);
+    });
+  }));
+</script>
+</body>
+</html>
