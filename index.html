@@ -4,7 +4,33 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Wanderson Castro — Hub de Projetos</title>
-<meta name="description" content="Hub central dos projetos de Wanderson Castro — economista, perito judicial e consultor. Observatórios econômicos, ferramentas financeiras, monitores de carreira e apps." />
+<meta name="description" content="Wanderson Castro — economista, perito judicial, consultor e delegado do CORECON-SP em Jandira. Hub com meus projetos: observatórios econômicos, ferramentas financeiras (FinLab), monitores de carreira e apps." />
+<meta name="author" content="Wanderson Castro" />
+<link rel="canonical" href="https://wandersocastrowc-arch.github.io/projetos/" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="apple-touch-icon" href="favicon.svg" />
+
+<!-- Open Graph (WhatsApp / Facebook / LinkedIn) -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="Wanderson Castro" />
+<meta property="og:url" content="https://wandersocastrowc-arch.github.io/projetos/" />
+<meta property="og:title" content="Wanderson Castro — Economia, dados e ferramentas" />
+<meta property="og:description" content="Economista, perito judicial e consultor. Reúno aqui meus projetos: observatórios econômicos, ferramentas financeiras (FinLab), monitores de carreira e apps." />
+<meta property="og:image" content="https://wandersocastrowc-arch.github.io/projetos/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Wanderson Castro — Hub de Projetos" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Wanderson Castro — Economia, dados e ferramentas" />
+<meta name="twitter:description" content="Economista, perito judicial e consultor. Observatórios econômicos, ferramentas financeiras, monitores de carreira e apps." />
+<meta name="twitter:image" content="https://wandersocastrowc-arch.github.io/projetos/og-image.png" />
+<meta name="theme-color" content="#070b14" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -43,7 +69,7 @@
   @keyframes ping{0%{box-shadow:0 0 0 0 rgba(52,211,153,.5)}70%{box-shadow:0 0 0 10px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
   header h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;line-height:1.05;margin-bottom:20px}
   header h1 .grad{background:linear-gradient(120deg,var(--emerald),var(--cyan) 55%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
-  header p.lead{font-size:clamp(1.02rem,2.2vw,1.22rem);color:var(--muted);max-width:620px}
+  header p.lead{font-size:clamp(1.02rem,2.2vw,1.22rem);color:var(--muted);max-width:640px}
   .roles{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
   .role{font-size:.84rem;color:var(--txt);background:var(--card);border:1px solid var(--line);padding:8px 14px;border-radius:10px}
   .stats{display:flex;gap:34px;margin-top:40px;flex-wrap:wrap}
@@ -91,7 +117,7 @@
   footer h4{font-family:'Sora';color:var(--txt);font-size:1rem;margin-bottom:8px}
   footer a{color:var(--cyan);text-decoration:none}
   footer a:hover{text-decoration:underline}
-  .note{font-size:.78rem;color:var(--faint);margin-top:26px;max-width:620px}
+  .note{font-size:.78rem;color:var(--faint);margin-top:26px;max-width:640px}
   .hidden{display:none!important}
 </style>
 </head>
@@ -102,6 +128,7 @@
   <nav>
     <div class="brand"><span class="dot"></span> Wanderson Castro <small>HUB</small></div>
     <div class="links">
+      <a href="#sobre">Sobre</a>
       <a href="#observatorios">Observatórios</a>
       <a href="#ferramentas">Ferramentas</a>
       <a href="#monitores">Monitores</a>
@@ -113,7 +140,7 @@
   <header>
     <span class="eyebrow"><span class="ping"></span> Projetos reunidos num só lugar</span>
     <h1>Economia, dados e ferramentas<br><span class="grad">que viram produto.</span></h1>
-    <p class="lead">Reúno aqui meus projetos públicos — de observatórios econômicos territoriais a calculadoras financeiras e apps. Tudo construído na prática, aberto e em evolução constante.</p>
+    <p class="lead">Sou <strong>Wanderson Castro</strong> — economista, perito judicial e consultor. Reúno aqui meus projetos públicos: de observatórios econômicos territoriais a ferramentas financeiras e apps, todos abertos e em evolução constante.</p>
     <div class="roles">
       <span class="role">Economista</span>
       <span class="role">Perito Judicial</span>
@@ -122,7 +149,7 @@
       <span class="role">Delegado CORECON-SP · Jandira</span>
     </div>
     <div class="stats">
-      <div class="stat"><div class="n">9</div><div class="l">Projetos</div></div>
+      <div class="stat"><div class="n">10</div><div class="l">Projetos</div></div>
       <div class="stat"><div class="n">2</div><div class="l">Observatórios</div></div>
       <div class="stat"><div class="n">3</div><div class="l">Monitores</div></div>
       <div class="stat"><div class="n">100%</div><div class="l">Open / Web</div></div>
@@ -131,29 +158,44 @@
 
   <div class="filters" id="filters">
     <button class="chip active" data-f="all">Todos</button>
+    <button class="chip" data-f="sobre">Portfólio</button>
     <button class="chip" data-f="obs">Observatórios</button>
     <button class="chip" data-f="fin">Ferramentas financeiras</button>
     <button class="chip" data-f="mon">Monitores</button>
     <button class="chip" data-f="app">Apps & experimentos</button>
   </div>
 
+  <!-- SOBRE / PORTFÓLIO -->
+  <div class="section-title" id="sobre"><h2>Sobre &amp; Portfólio</h2><span class="bar"></span><span class="count">1</span></div>
+  <div class="grid">
+    <a class="card" data-cat="sobre" style="--accent:var(--cyan);--cov:radial-gradient(160px 95px at 84% 6%,rgba(34,211,238,.55),transparent 72%),radial-gradient(140px 120px at 6% 110%,rgba(52,211,153,.45),transparent 70%),linear-gradient(140deg,#155e63,#1e293b)" href="https://wandersocastrowc-arch.github.io/Portifolio/" target="_blank" rel="noopener">
+      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><circle cx="56" cy="46" r="22" fill="#ffffff"/><circle cx="56" cy="40" r="8" fill="#22d3ee"/><path d="M40 60 a16 13 0 0 1 32 0 z" fill="#22d3ee"/><rect x="92" y="34" width="58" height="8" rx="4" fill="#ffffff"/><rect x="92" y="50" width="46" height="6" rx="3" fill="#a5f3fc"/><rect x="92" y="63" width="36" height="6" rx="3" fill="#a5f3fc"/></svg><span class="badge">Currículo</span></div>
+      <div class="body">
+        <h3>Portfólio de Wanderson Castro</h3>
+        <p>Quem sou e como minhas contribuições impactam o seu negócio: perícia econômico-financeira, planejamento financeiro, BPO e treinamentos corporativos.</p>
+        <div class="tags"><span class="tag">Sobre</span><span class="tag">Currículo</span><span class="tag">Consultoria</span></div>
+        <div class="foot">Acessar <span class="arrow">→</span></div>
+      </div>
+    </a>
+  </div>
+
   <!-- OBSERVATÓRIOS -->
   <div class="section-title" id="observatorios"><h2>Observatórios & Inteligência Territorial</h2><span class="bar"></span><span class="count">2</span></div>
   <div class="grid">
     <a class="card" data-cat="obs" style="--accent:var(--cyan);--cov:radial-gradient(150px 95px at 82% 4%,rgba(34,211,238,.6),transparent 72%),radial-gradient(130px 120px at 4% 112%,rgba(167,139,250,.5),transparent 70%),linear-gradient(140deg,#0e7490,#3b1d6e)" href="https://wandersocastrowc-arch.github.io/observatorio-jandira/" target="_blank" rel="noopener">
-      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><circle cx="150" cy="20" r="10" fill="#ddd6fe"/><rect x="6" y="52" width="24" height="48" rx="2" fill="#a5f3fc"/><rect x="34" y="34" width="28" height="66" rx="2" fill="#ffffff"/><rect x="66" y="60" width="22" height="40" rx="2" fill="#67e8f9"/><rect x="92" y="46" width="28" height="54" rx="2" fill="#e0fcff"/><rect x="124" y="64" width="24" height="36" rx="2" fill="#22d3ee"/><g fill="#0e7490"><rect x="42" y="42" width="4" height="6"/><rect x="50" y="42" width="4" height="6"/><rect x="42" y="54" width="4" height="6"/><rect x="50" y="54" width="4" height="6"/><rect x="100" y="56" width="4" height="6"/><rect x="108" y="56" width="4" height="6"/></g></svg><span class="badge">Observatório</span></div>
+      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><g stroke="#b45309" stroke-width="1.5" stroke-linejoin="round"><polygon points="-15,0 -7.5,-13 7.5,-13 15,0 7.5,13 -7.5,13" transform="translate(40,34)" fill="#fcd34d"/><polygon points="-15,0 -7.5,-13 7.5,-13 15,0 7.5,13 -7.5,13" transform="translate(40,60)" fill="#fbbf24"/><polygon points="-15,0 -7.5,-13 7.5,-13 15,0 7.5,13 -7.5,13" transform="translate(63,21)" fill="#fde68a"/><polygon points="-15,0 -7.5,-13 7.5,-13 15,0 7.5,13 -7.5,13" transform="translate(63,47)" fill="#f59e0b"/><polygon points="-15,0 -7.5,-13 7.5,-13 15,0 7.5,13 -7.5,13" transform="translate(63,73)" fill="#fbbf24"/><polygon points="-15,0 -7.5,-13 7.5,-13 15,0 7.5,13 -7.5,13" transform="translate(86,34)" fill="#fbbf24"/><polygon points="-15,0 -7.5,-13 7.5,-13 15,0 7.5,13 -7.5,13" transform="translate(86,60)" fill="#fcd34d"/></g><path d="M63 86 c-6 7 -6 12 0 12 c6 0 6 -5 0 -12 z" fill="#f59e0b"/><circle cx="116" cy="30" r="9" fill="#fffbeb" stroke="#b45309" stroke-width="1.5"/><ellipse cx="116" cy="30" rx="9" ry="3.4" fill="#fde68a"/></svg><span class="badge">Observatório</span></div>
       <div class="body">
         <h3>Observatório Econômico de Jandira</h3>
-        <p>HUB de inteligência territorial com indicadores socioeconômicos do município — emprego, CAGED, PIB e dados públicos atualizados.</p>
+        <p>HUB de inteligência territorial com indicadores socioeconômicos do município — emprego, CAGED, PIB e dados públicos atualizados. (Jandira = "favo de mel".)</p>
         <div class="tags"><span class="tag">Dados públicos</span><span class="tag">Jandira-SP</span><span class="tag">Indicadores</span></div>
         <div class="foot">Acessar <span class="arrow">→</span></div>
       </div>
     </a>
     <a class="card" data-cat="obs" style="--accent:var(--cyan);--cov:radial-gradient(160px 95px at 18% 0%,rgba(52,211,153,.55),transparent 70%),radial-gradient(130px 120px at 96% 112%,rgba(34,211,238,.5),transparent 72%),linear-gradient(135deg,#0f766e,#164e63)" href="https://wandersocastrowc-arch.github.io/observatorio-caratinga/" target="_blank" rel="noopener">
-      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><circle cx="34" cy="24" r="9" fill="#fde68a"/><path d="M-2 100 L46 38 L82 84 L94 70 L120 100 Z" fill="#bbf7d0"/><path d="M72 100 L120 44 L168 100 Z" fill="#ffffff"/><path d="M110 57 L120 44 L130 57 L124 61 L120 54 L116 61 Z" fill="#a5f3fc"/></svg><span class="badge">Observatório</span></div>
+      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><path d="M-2 88 H182 V100 H-2 Z" fill="#0f766e"/><circle cx="30" cy="22" r="9" fill="#fde68a"/><path d="M-2 90 L40 56 L80 90 Z" fill="#34d399"/><path d="M100 90 L146 16 L176 90 Z" fill="#ffffff"/><path d="M146 16 L176 90 L152 90 Z" fill="#a5f3fc"/><path d="M146 16 L130 90" stroke="#cbd5e1" stroke-width="2" fill="none"/></svg><span class="badge">Observatório</span></div>
       <div class="body">
         <h3>Observatório Econômico de Caratinga</h3>
-        <p>Inteligência territorial para Caratinga-MG: panorama econômico, dados municipais e indicadores de desenvolvimento local.</p>
+        <p>Inteligência territorial para Caratinga-MG: panorama econômico, dados municipais e indicadores de desenvolvimento local. (Em destaque, a Pedra Itaúna.)</p>
         <div class="tags"><span class="tag">Dados públicos</span><span class="tag">Caratinga-MG</span><span class="tag">Indicadores</span></div>
         <div class="foot">Acessar <span class="arrow">→</span></div>
       </div>
@@ -164,11 +206,11 @@
   <div class="section-title" id="ferramentas"><h2>Ferramentas Financeiras</h2><span class="bar"></span><span class="count">2</span></div>
   <div class="grid">
     <a class="card" data-cat="fin" style="--accent:var(--emerald);--cov:radial-gradient(150px 95px at 84% 6%,rgba(52,211,153,.6),transparent 72%),radial-gradient(130px 120px at 4% 110%,rgba(34,211,238,.4),transparent 70%),linear-gradient(140deg,#047857,#155e6e)" href="https://wandersocastrowc-arch.github.io/precificadora/" target="_blank" rel="noopener">
-      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(-16 70 56)"><rect x="34" y="30" width="66" height="66" rx="14" fill="#ffffff"/><circle cx="52" cy="48" r="7" fill="#047857"/></g><circle cx="130" cy="66" r="22" fill="#fde68a"/><text x="130" y="74" font-size="23" font-weight="800" fill="#047857" text-anchor="middle" font-family="'Sora',sans-serif">$</text></svg><span class="badge">FinLab</span></div>
+      <div class="cover"><svg class="art" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(-16 56 60)"><rect x="22" y="34" width="58" height="58" rx="12" fill="#ffffff"/><circle cx="38" cy="50" r="6" fill="#047857"/><text x="56" y="76" font-size="19" font-weight="800" fill="#047857" text-anchor="middle" font-family="'Sora',sans-serif">$</text></g><path d="M108 56 Q132 36 156 56 Z" fill="#fbbf24"/><circle cx="124" cy="50" r="1.6" fill="#fff7ed"/><circle cx="132" cy="47" r="1.6" fill="#fff7ed"/><circle cx="140" cy="50" r="1.6" fill="#fff7ed"/><path d="M106 57 q12 7 25 0 q13 7 25 0 l0 4 q-12 6 -25 0 q-13 6 -25 0 z" fill="#34d399"/><rect x="108" y="64" width="46" height="7" rx="3.5" fill="#7c2d12"/><path d="M108 71 h46 q4 0 4 4 q0 6 -9 6 h-36 q-9 0 -9 -6 q0 -4 4 -4 z" fill="#f59e0b"/></svg><span class="badge">FinLab</span></div>
       <div class="body">
         <h3>Precificadora · iFood &amp; Marketplaces</h3>
-        <p>Precificação por canal para delivery e marketplaces. Calcule custo, preço de venda e margem de contribuição com clareza.</p>
-        <div class="tags"><span class="tag">Margem</span><span class="tag">Delivery</span><span class="tag">Precificação</span></div>
+        <p>Precificação por canal para delivery e marketplaces. Calcule custo, preço de venda e margem de contribuição — padaria, lanchonete, iFood e mais.</p>
+        <div class="tags"><span class="tag">Margem</span><span class="tag">Delivery</span><span class="tag">Alimentação</span></div>
         <div class="foot">Acessar <span class="arrow">→</span></div>
       </div>
     </a>
